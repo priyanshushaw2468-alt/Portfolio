@@ -12,6 +12,9 @@ export interface Project {
   outcome?: string;
   behanceUrl?: string;
   prototypeUrl?: string;
+  role?: string;
+  timeline?: string;
+  tools?: string;
 }
 
 export interface NavigationItem {

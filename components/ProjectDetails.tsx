@@ -108,15 +108,15 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ project, onClose }) => 
             <div className="md:col-span-1 space-y-8">
                 <div>
                     <h3 className="text-sm font-mono uppercase tracking-widest text-neutral-500 mb-3">Role</h3>
-                    <p className="text-neutral-900 dark:text-white font-medium">UI/UX Designer</p>
+                    <p className="text-neutral-900 dark:text-white font-medium">{project.role || "UI/UX Designer"}</p>
                 </div>
                 <div>
                     <h3 className="text-sm font-mono uppercase tracking-widest text-neutral-500 mb-3">Timeline</h3>
-                    <p className="text-neutral-900 dark:text-white font-medium">4 Weeks</p>
+                    <p className="text-neutral-900 dark:text-white font-medium">{project.timeline || "4 Weeks"}</p>
                 </div>
                 <div>
                     <h3 className="text-sm font-mono uppercase tracking-widest text-neutral-500 mb-3">Tools</h3>
-                    <p className="text-neutral-900 dark:text-white font-medium">Figma, Framer, Illustrator</p>
+                    <p className="text-neutral-900 dark:text-white font-medium">{project.tools || "Figma"}</p>
                 </div>
             </div>
 

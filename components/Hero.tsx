@@ -1,12 +1,21 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Download } from 'lucide-react';
 import { jsPDF } from 'jspdf';
 import { HERO_DATA } from '../constants';
 
 const Hero: React.FC = () => {
+  // State to handle image loading errors and fallback
+  const [imgSrc, setImgSrc] = useState("https://lh3.googleusercontent.com/d/1Y59-hOrsbyeOBBYTN0TxvcYAcAjh5Nvz");
   
+  const handleImageError = () => {
+    // If the lh3 link fails, fallback to the standard export=view link
+    if (imgSrc.includes("lh3.googleusercontent.com")) {
+      setImgSrc("https://drive.google.com/uc?export=view&id=1Y59-hOrsbyeOBBYTN0TxvcYAcAjh5Nvz");
+    }
+  };
+
   const handleDownloadResume = () => {
     const doc = new jsPDF();
     const margin = 20;
@@ -76,10 +85,12 @@ const Hero: React.FC = () => {
     // --- Projects ---
     addSectionHeader("Projects");
     const projects = [
-      "Real Estate Website - A client project.",
-      "SpendSync - Mobile app for expense tracking.",
-      "Fiverr Landing Page Redesign - A practice project.",
-      "MindMesh - An AI Webpage Design."
+      "Real Estate - Website (2025)",
+      "PawPals - Pet Adoption Platform",
+      "Padosi - An online platform for local stores",
+      "IRCTC - App Redesign",
+      "TOKO Waste - Trash-to-Treasure",
+      "Finora Dashboard"
     ];
     projects.forEach(p => {
         if (yPos > 280) { doc.addPage(); yPos = 20; }
@@ -135,7 +146,7 @@ const Hero: React.FC = () => {
             <div className="space-y-4">
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-neutral-900 dark:text-white leading-[0.9]">
                 Crafting <br />
-                <span className="text-neutral-400 dark:text-neutral-500">Digital Reality.</span>
+                <span className="text-neutral-400 dark:text-neutral-500">Digital Reality</span>
               </h1>
               <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-md leading-relaxed">
                 {HERO_DATA.headline}
@@ -168,15 +179,13 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="lg:col-span-5 relative h-full min-h-[400px] lg:min-h-auto rounded-[2rem] overflow-hidden bg-neutral-100 dark:bg-[#0f0f0f] border border-neutral-200 dark:border-white/5 transition-colors duration-300"
         >
-          {/* Static Grayscale Image */}
+          {/* Static Image */}
           <img 
-            src="https://drive.google.com/uc?export=view&id=1d0WIuIpHoIVgSmEuwuaIp_WntX78YyR0" 
+            src={imgSrc}
+            onError={handleImageError}
             alt="Priyanshu Shaw" 
-            className="absolute inset-0 w-full h-full object-cover grayscale opacity-90"
+            className="absolute inset-0 w-full h-full object-cover"
           />
-          
-          {/* Subtle Overlay to blend with dark theme */}
-          <div className="absolute inset-0 bg-gradient-to-t from-white/20 dark:from-[#0f0f0f] via-transparent to-transparent opacity-40" />
 
           {/* Floating Name Card */}
           <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-white/60 dark:bg-black/40 backdrop-blur-md border border-white/20 dark:border-white/10 shadow-lg dark:shadow-none">

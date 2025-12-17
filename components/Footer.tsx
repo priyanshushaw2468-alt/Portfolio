@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
         <div className="mb-32">
             <h2 className="text-[12vw] leading-[0.85] font-semibold tracking-tighter text-neutral-900 dark:text-white mb-16">
               Let's work <br/>
-              <span className="text-neutral-400 dark:text-neutral-700">together.</span>
+              <span className="text-neutral-400 dark:text-neutral-700">together</span>
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -54,6 +54,8 @@ const Footer: React.FC = () => {
                             <a 
                                 key={link.platform}
                                 href={link.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="group flex items-center gap-3 text-3xl md:text-5xl font-medium tracking-tight text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
                             >
                                 {link.platform}

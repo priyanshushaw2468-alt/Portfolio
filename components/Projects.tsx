@@ -16,7 +16,7 @@ const Projects: React.FC<ProjectsProps> = ({ onProjectClick }) => {
         <div className="mb-20">
           <h2 className="text-[10vw] leading-[0.9] font-semibold tracking-tighter text-neutral-900 dark:text-white transition-colors">
             Selected <br />
-            <span className="text-neutral-400 dark:text-neutral-700">Work.</span>
+            <span className="text-neutral-400 dark:text-neutral-700">Work</span>
           </h2>
         </div>
         

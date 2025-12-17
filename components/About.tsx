@@ -1,8 +1,8 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Briefcase, PenTool, Cpu, Calendar, ArrowRight } from 'lucide-react';
-import { EXPERIENCE_DATA, SKILLS, AI_TOOLS } from '../constants';
+import { Briefcase, PenTool, Cpu, Calendar, Tool } from 'lucide-react';
+import { EXPERIENCE_DATA, DESIGN_TOOLS, DESIGN_SKILLS, AI_TOOLS } from '../constants';
 
 const About: React.FC = () => {
   return (
@@ -26,31 +26,44 @@ const About: React.FC = () => {
                 <div className="space-y-6">
                     <h3 className="text-xl font-medium text-neutral-900 dark:text-white flex items-center gap-3">
                         <span className="w-8 h-[1px] bg-neutral-400"></span>
-                        The Designer
+                        About Me
                     </h3>
                     <div className="text-lg leading-relaxed text-neutral-600 dark:text-neutral-400 space-y-6">
                         <p>
-                            Highly motivated and detail-oriented. With a background in <span className="text-neutral-900 dark:text-white font-medium">Commerce (B.Com Hons)</span>, 
-                            I bring a unique perspective to design—balancing aesthetic creativity with business logic.
+                            I’m a highly motivated college student leveraging my <span className="text-neutral-900 dark:text-white font-medium">B.Com (Hons)</span> background to build a career in design. As a self-taught UI/UX enthusiast, I thrive on bridging the gap between big-picture strategy and practical application.
                         </p>
                         <p>
-                            I specialize in turning complex ideas into intuitive interfaces using <span className="text-neutral-900 dark:text-white font-medium">Figma</span> and <span className="text-neutral-900 dark:text-white font-medium">Framer</span>.
-                            Currently bridging the gap between design and development with Next.js and Tailwind.
+                            I am detail-oriented and dedicated to creating smooth, simple digital experiences. My core strength is balancing aesthetic creativity with sound business logic, ensuring that every interface is intuitive, effective, and serves a clear purpose.
                         </p>
                     </div>
                 </div>
 
                 {/* Skills Block */}
-                <div className="space-y-8">
-                     {/* Design Stack */}
-                     <div className="space-y-4">
-                        <div className="flex items-center gap-2 text-neutral-900 dark:text-white font-medium">
-                            <PenTool size={18} />
-                            <h4>Design Stack</h4>
-                        </div>
+                <div className="space-y-10">
+                     {/* Tools & Skills Header */}
+                     <div className="flex items-center gap-2 text-neutral-900 dark:text-white font-bold text-lg">
+                        <PenTool size={20} className="text-indigo-600" />
+                        <h4>Tools & Skills</h4>
+                     </div>
+
+                     {/* Tools Sub-section */}
+                     <div className="space-y-3 pl-2">
+                        <div className="text-xs font-mono uppercase tracking-widest text-neutral-500">Tools</div>
                         <div className="flex flex-wrap gap-2">
-                            {SKILLS.map(skill => (
-                                <span key={skill} className="px-3 py-1.5 bg-neutral-100 dark:bg-white/5 border border-neutral-200 dark:border-white/10 rounded-lg text-sm text-neutral-600 dark:text-neutral-300">
+                            {DESIGN_TOOLS.map(tool => (
+                                <span key={tool} className="px-3 py-1.5 bg-neutral-100 dark:bg-white/5 border border-neutral-200 dark:border-white/10 rounded-lg text-sm text-neutral-600 dark:text-neutral-300 font-medium">
+                                    {tool}
+                                </span>
+                            ))}
+                        </div>
+                     </div>
+
+                     {/* Skills Sub-section */}
+                     <div className="space-y-3 pl-2">
+                        <div className="text-xs font-mono uppercase tracking-widest text-neutral-500">Skills</div>
+                        <div className="flex flex-wrap gap-2">
+                            {DESIGN_SKILLS.map(skill => (
+                                <span key={skill} className="px-3 py-1.5 bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-lg text-sm text-neutral-600 dark:text-neutral-400">
                                     {skill}
                                 </span>
                             ))}
@@ -78,7 +91,7 @@ const About: React.FC = () => {
             <div className="lg:col-span-7">
                 <h3 className="text-xl font-medium text-neutral-900 dark:text-white flex items-center gap-3 mb-12">
                     <span className="w-8 h-[1px] bg-neutral-400"></span>
-                    Work History
+                    Work Experience
                 </h3>
 
                 <div className="space-y-12 relative before:absolute before:left-[19px] before:top-2 before:bottom-0 before:w-[1px] before:bg-neutral-200 dark:before:bg-neutral-800">
