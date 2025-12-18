@@ -17,7 +17,7 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
 export const EXPERIENCE_DATA: ExperienceItem[] = [
   {
     role: "UI/UX Designer Intern",
-    company: "URLWEBALA",
+    company: "URLWEBWALA",
     period: "Jul 2025 – Sep 2025",
     description: "Designed a real estate website from scratch (User Research to High-fidelity), collaborated with developers for seamless handoff."
   }

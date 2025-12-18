@@ -70,7 +70,7 @@ const Hero: React.FC = () => {
     
     // Job 1
     doc.setFont("helvetica", "bold");
-    doc.text("UI/UX Designer Intern - URLWEBALA", margin, yPos);
+    doc.text("UI/UX Designer Intern - URLWEBWALA", margin, yPos);
     doc.setFont("helvetica", "normal");
     const dateText = "(Jul 2025 – Sep 2025)";
     const dateWidth = doc.getTextWidth(dateText);
